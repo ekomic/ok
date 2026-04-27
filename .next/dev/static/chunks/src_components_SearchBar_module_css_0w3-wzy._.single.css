@@ -1,0 +1,88 @@
+/* [project]/src/components/SearchBar.module.css [app-client] (css) */
+.SearchBar-module__9ObJ7W__section {
+  z-index: 10;
+  margin-top: -56px;
+  position: relative;
+}
+
+.SearchBar-module__9ObJ7W__card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid #c9a84c33;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 60px #00000080;
+}
+
+.SearchBar-module__9ObJ7W__field {
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 18px 24px;
+  display: flex;
+}
+
+.SearchBar-module__9ObJ7W__label {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  margin-bottom: 6px;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+.SearchBar-module__9ObJ7W__select {
+  font-family: var(--font-sans);
+  color: var(--black);
+  cursor: pointer;
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") right 0 center no-repeat;
+  border: none;
+  outline: none;
+  padding-right: 20px;
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.SearchBar-module__9ObJ7W__divider {
+  background: #0000001a;
+  flex-shrink: 0;
+  width: 1px;
+  height: 48px;
+}
+
+.SearchBar-module__9ObJ7W__btn {
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  margin: 12px;
+}
+
+@media (max-width: 768px) {
+  .SearchBar-module__9ObJ7W__section {
+    margin-top: 0;
+  }
+
+  .SearchBar-module__9ObJ7W__card {
+    flex-direction: column;
+    margin: 24px 0;
+  }
+
+  .SearchBar-module__9ObJ7W__field {
+    border-bottom: 1px solid #00000014;
+    width: 100%;
+  }
+
+  .SearchBar-module__9ObJ7W__divider {
+    display: none;
+  }
+
+  .SearchBar-module__9ObJ7W__btn {
+    justify-content: center;
+    width: calc(100% - 24px);
+    margin: 12px;
+  }
+}
+
+/*# sourceMappingURL=src_components_SearchBar_module_css_0w3-wzy._.single.css.map*/

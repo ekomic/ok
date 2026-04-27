@@ -1,0 +1,178 @@
+/* [project]/src/components/About.module.css [app-client] (css) */
+.About-module__vAULUW__section {
+  background: var(--black);
+  padding: 100px 0;
+}
+
+.About-module__vAULUW__inner {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  display: grid;
+}
+
+.About-module__vAULUW__media {
+  height: 560px;
+  position: relative;
+}
+
+.About-module__vAULUW__imgMain {
+  border-radius: var(--radius-md);
+  width: 78%;
+  height: 85%;
+  box-shadow: var(--shadow-card);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.About-module__vAULUW__imgAccent {
+  border-radius: var(--radius-md);
+  border: 4px solid var(--black);
+  width: 52%;
+  height: 48%;
+  box-shadow: var(--shadow-card);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.About-module__vAULUW__img {
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.About-module__vAULUW__imgMain:hover .About-module__vAULUW__img {
+  transform: scale(1.04);
+}
+
+.About-module__vAULUW__badge {
+  background: var(--gold);
+  color: var(--black);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  z-index: 2;
+  padding: 16px 20px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 32px #c9a84c66;
+}
+
+.About-module__vAULUW__badgeValue {
+  font-family: var(--font-serif);
+  margin-bottom: 4px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.About-module__vAULUW__badgeLabel {
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.About-module__vAULUW__content {
+  flex-direction: column;
+  display: flex;
+}
+
+.About-module__vAULUW__text {
+  color: #ffffffb3;
+  margin-bottom: 16px;
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+.About-module__vAULUW__values {
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 32px;
+  list-style: none;
+  display: flex;
+}
+
+.About-module__vAULUW__valueItem {
+  color: #fffc;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .875rem;
+  line-height: 1.5;
+  display: flex;
+}
+
+.About-module__vAULUW__check {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.About-module__vAULUW__partnersLabel {
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 14px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+.About-module__vAULUW__partnerBadges {
+  flex-wrap: wrap;
+  gap: 12px;
+  display: flex;
+}
+
+.About-module__vAULUW__partnerBadge {
+  border-radius: var(--radius-sm);
+  letter-spacing: .1em;
+  color: var(--gold);
+  transition: background var(--transition), border-color var(--transition);
+  background: #c9a84c0d;
+  border: 1px solid #c9a84c4d;
+  padding: 8px 18px;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.About-module__vAULUW__partnerBadge:hover {
+  border-color: var(--gold);
+  background: #c9a84c1f;
+}
+
+@media (max-width: 960px) {
+  .About-module__vAULUW__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .About-module__vAULUW__media {
+    width: 100%;
+    max-width: 560px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .About-module__vAULUW__section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .About-module__vAULUW__media {
+    height: 300px;
+  }
+
+  .About-module__vAULUW__imgAccent {
+    width: 48%;
+    height: 44%;
+  }
+}
+
+/*# sourceMappingURL=src_components_About_module_css_0w3-wzy._.single.css.map*/
