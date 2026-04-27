@@ -1,0 +1,66 @@
+.section { padding: 100px 0; background: var(--black-soft); }
+
+.header { text-align: center; margin-bottom: 56px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 220px;
+  gap: 12px;
+}
+
+.item {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-sm); cursor: pointer;
+  background: var(--black-card);
+}
+
+.wide { grid-column: span 2; }
+.tall { grid-row: span 2; }
+
+.img { object-fit: cover; transition: transform 0.5s ease; }
+.item:hover .img { transform: scale(1.08); }
+
+.overlay {
+  position: absolute; inset: 0;
+  background: rgba(10,10,10,0.5);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); opacity: 0; transition: opacity var(--transition);
+}
+
+.item:hover .overlay { opacity: 1; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.92);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.close {
+  position: absolute; top: 20px; right: 20px;
+  color: var(--white); background: rgba(255,255,255,0.1);
+  border-radius: 50%; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), color var(--transition); z-index: 1;
+}
+
+.close:hover { background: var(--gold); color: var(--black); }
+
+.lightboxContent { max-width: 1100px; width: 100%; text-align: center; }
+
+.lightboxImgWrap { position: relative; width: 100%; height: 75vh; }
+
+.lightboxImg { object-fit: contain; border-radius: var(--radius-sm); }
+
+.caption { margin-top: 16px; font-size: 0.875rem; color: rgba(255,255,255,0.6); font-style: italic; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 180px; } }
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
+  .tall { grid-row: span 1; }
+  .section { padding: 72px 0; }
+}

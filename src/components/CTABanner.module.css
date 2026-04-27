@@ -1,0 +1,22 @@
+.section { position: relative; padding: 120px 0; overflow: hidden; text-align: center; }
+
+.bg { position: absolute; inset: 0; z-index: 0; }
+
+.bgImg { object-fit: cover; object-position: center; }
+
+.overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.88) 100%); }
+
+.content { position: relative; z-index: 1; }
+
+.headline { font-family: var(--font-serif); font-size: clamp(2.2rem,5vw,4rem); font-weight: 600; color: var(--white); line-height: 1.15; margin: 12px 0 20px; }
+
+.headline span { color: var(--gold); font-style: italic; }
+
+.sub { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+
+.actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 480px) {
+  .section { padding: 80px 0; }
+  .actions { flex-direction: column; align-items: center; }
+}
