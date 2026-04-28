@@ -30,4 +30,6 @@ declare module 'lucide-react' {
   export const Home: LucideIcon;
   export const X: LucideIcon;
   export const ZoomIn: LucideIcon;
+  export const Sun: LucideIcon;
+  export const Moon: LucideIcon;
 }

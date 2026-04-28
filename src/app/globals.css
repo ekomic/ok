@@ -7,7 +7,9 @@
   padding: 0;
 }
 
-:root {
+/* ── Dark mode (default) ── */
+:root,
+[data-theme="dark"] {
   --black:       #0A0A0A;
   --black-soft:  #111111;
   --black-card:  #161616;
@@ -16,8 +18,27 @@
   --gold-dark:   #A8872E;
   --white:       #FFFFFF;
   --off-white:   #F5F0E8;
-  --gray-400:    #9A9A9A;
-  --gray-600:    #5A5A5A;
+
+  /* Text colours — all meet contrast on dark backgrounds */
+  --text-primary:   #FFFFFF;
+  --text-secondary: rgba(255,255,255,0.90);
+  --text-muted:     rgba(255,255,255,0.75);
+  --text-subtle:    rgba(255,255,255,0.60);
+
+  /* Surface colours */
+  --surface-bg:     #0A0A0A;
+  --surface-soft:   #111111;
+  --surface-card:   #161616;
+
+  /* Borders */
+  --border-subtle:  rgba(255,255,255,0.08);
+  --border-gold:    rgba(201,168,76,0.15);
+
+  /* Search bar (white card) */
+  --searchbar-bg:       #FFFFFF;
+  --searchbar-label:    #5A5A5A;
+  --searchbar-text:     #0A0A0A;
+  --searchbar-divider:  rgba(0,0,0,0.1);
 
   --font-serif:  'Cormorant Garamond', Georgia, serif;
   --font-sans:   'DM Sans', system-ui, sans-serif;
@@ -30,6 +51,41 @@
   --shadow-card: 0 8px 40px rgba(0,0,0,0.45);
 }
 
+/* ── Light mode ── */
+[data-theme="light"] {
+  --black:       #FFFFFF;
+  --black-soft:  #F4F1EB;
+  --black-card:  #FFFFFF;
+  --gold:        #B8922A;
+  --gold-light:  #C9A84C;
+  --gold-dark:   #8A6E1E;
+  --white:       #1A1A1A;
+  --off-white:   #2A2A2A;
+
+  /* Text colours */
+  --text-primary:   #1A1A1A;
+  --text-secondary: #2E2E2E;
+  --text-muted:     #4A4A4A;
+  --text-subtle:    #6A6A6A;
+
+  /* Surface colours */
+  --surface-bg:     #FAFAF8;
+  --surface-soft:   #F4F1EB;
+  --surface-card:   #FFFFFF;
+
+  /* Borders */
+  --border-subtle:  rgba(0,0,0,0.08);
+  --border-gold:    rgba(184,146,42,0.25);
+
+  /* Search bar */
+  --searchbar-bg:       #FFFFFF;
+  --searchbar-label:    #5A5A5A;
+  --searchbar-text:     #1A1A1A;
+  --searchbar-divider:  rgba(0,0,0,0.1);
+
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.12);
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -37,11 +93,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--surface-bg);
+  color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -70,7 +127,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 600;
   line-height: 1.15;
-  color: var(--white);
+  color: var(--text-primary);
 }
 
 .section-title span {
@@ -84,7 +141,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   gap: 8px;
   padding: 14px 32px;
   background: var(--gold);
-  color: var(--black);
+  color: #FFFFFF;
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;
@@ -105,12 +162,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   gap: 8px;
   padding: 13px 32px;
   background: transparent;
-  color: var(--white);
+  color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  border: 1.5px solid rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(128,128,128,0.5);
   border-radius: var(--radius-sm);
   transition: border-color var(--transition), color var(--transition), transform var(--transition);
 }
@@ -141,5 +198,5 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-track { background: var(--surface-bg); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }

@@ -35,7 +35,7 @@
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 600;
   line-height: 1.08;
-  color: var(--white);
+  color: #FFFFFF;
   margin: 12px 0 24px;
   animation: fadeUp 0.8s ease 0.5s both;
 }
@@ -44,7 +44,7 @@
 
 .sub {
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.88);
   max-width: 560px;
   line-height: 1.7;
   margin-bottom: 40px;
@@ -59,13 +59,24 @@
   margin-bottom: 64px;
 }
 
+/* Hero always has dark overlay so force white btn-outline */
+.actions :global(.btn-outline) {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.actions :global(.btn-outline):hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .stats {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   animation: fadeUp 0.8s ease 1.1s both;
   padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .stat { display: flex; flex-direction: column; gap: 4px; }
@@ -78,7 +89,7 @@
   line-height: 1;
 }
 
-.statLabel { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
+.statLabel { font-size: 0.8rem; color: rgba(255,255,255,0.75); letter-spacing: 0.05em; }
 
 .scrollIndicator {
   position: absolute;
@@ -86,7 +97,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.6);
   animation: bounce 2s ease-in-out infinite;
   transition: color var(--transition);
 }

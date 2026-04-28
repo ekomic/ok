@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import type { NavLink } from "@/types";
+import { useTheme } from "@/context/ThemeContext";
 import styles from "./Navbar.module.css";
 
 const navLinks: NavLink[] = [
@@ -17,6 +18,7 @@ const navLinks: NavLink[] = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -48,17 +50,37 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact" className={`btn-gold ${styles.cta}`}>
-          Book a Consultation
-        </a>
+        <div className={styles.rightControls}>
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
 
-        <button
-          className={styles.hamburger}
-          onClick={() => setMenuOpen((o) => !o)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <a href="#contact" className={`btn-gold ${styles.cta}`}>
+            Book a Consultation
+          </a>
+        </div>
+
+        <div className={styles.mobileControls}>
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          <button
+            className={styles.hamburger}
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       <div className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""}`}>
